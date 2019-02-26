@@ -8,7 +8,7 @@ public class Employee {
 	
 	private Integer telf;
 	
-	private Room room;
+	private Integer room;
 
 	public Integer getEmployeeId() {
 		return employeeId;
@@ -34,13 +34,16 @@ public class Employee {
 		this.telf = telf;
 	}
 
-	public Room getRoom() {
+	public Integer getRoom() {
 		return room;
 	}
 
-	public void setRoom(Room room) {
+	public void setRoom(Integer room) {
 		this.room = room;
 	}
 	
+	public String toString() {
+		return "Employee num.: " + employeeId + " Nombre: " + name + " Telf.:" + telf;
+	}
 	
 }

@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.vn.model.Room;
 
+
 public class RoomMapper implements RowMapper<Room>{
 
 	@Override
