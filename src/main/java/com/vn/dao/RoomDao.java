@@ -4,5 +4,4 @@ import com.vn.model.Room;
 
 public interface RoomDao extends Dao<Room, Integer> {
 	
-	public int countByBuilding(Integer buildingId); 
 }
