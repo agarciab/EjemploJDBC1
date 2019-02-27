@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import com.vn.dao.RoomDao;
-import com.vn.mapper.RoomMapper;
 import com.vn.model.Room;
 
 @Repository
@@ -26,7 +25,7 @@ public class RoomDaoImpl extends AbstractDao<Room, Integer> implements RoomDao {
 		Room room = new Room();
 		room.setRoomId(id);
 		SqlParameterSource namedParameters = new BeanPropertySqlParameterSource(room);
-		return namedParameterjdbcTemplate.queryForObject(sql, namedParameters, new RoomMapper());
+		return namedParameterjdbcTemplate.queryForObject(sql, namedParameters, roomMapper);
 	}
 
 	@Override

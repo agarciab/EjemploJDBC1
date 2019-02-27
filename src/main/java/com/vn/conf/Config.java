@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import com.vn.model.Building;
 import com.vn.model.Employee;
+import com.vn.model.Room;
 
 @Configuration
 @ComponentScan("com.vn")
@@ -21,5 +22,10 @@ public class Config {
 	@Bean
 	public BeanPropertyRowMapper<Building> buildingMapper() {
 		return new BeanPropertyRowMapper<>(Building.class);
+	}
+	
+	@Bean
+	public BeanPropertyRowMapper<Room> roomMapper() {
+		return new BeanPropertyRowMapper<>(Room.class);
 	}
 }
