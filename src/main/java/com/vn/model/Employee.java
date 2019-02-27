@@ -43,7 +43,7 @@ public class Employee {
 	}
 	
 	public String toString() {
-		return "Employee num.: " + employeeId + " Nombre: " + name + " Telf.:" + telf;
+		return "Employee num.: " + employeeId + " Nombre: " + name + " Telf.:" + telf + " Room: " + room;
 	}
 	
 }

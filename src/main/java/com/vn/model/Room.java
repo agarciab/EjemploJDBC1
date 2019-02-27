@@ -33,7 +33,7 @@ public class Room {
 	}	
 	
 	public String toString() {
-		return "Room num.: " + roomId + " Nombre: " + name;
+		return "Room num.: " + roomId + " Nombre: " + name + " Building: " + building;
 	}
 	
 }

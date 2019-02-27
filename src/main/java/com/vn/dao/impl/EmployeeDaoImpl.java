@@ -74,6 +74,33 @@ public class EmployeeDaoImpl extends AbstractDao<Employee, Integer> implements E
 		} 
 		
 	}
+
+	@Override
+	public Employee findByName(String name) {
+		String sql = "SELECT * FROM Employee WHERE name = :name";
+		Employee emp = new Employee();
+		emp.setName(name);
+		SqlParameterSource namedParameters = new BeanPropertySqlParameterSource(emp);
+		Employee e = null;
+		try {
+			e = namedParameterjdbcTemplate.queryForObject(sql, namedParameters, employeeMapper);
+		} catch (Exception exception) {
+			e= null;
+		}
+		return e;
+	}
+
+	@Override
+	@Transactional
+	public void reubicarEmpleados(Integer habitacionOrigen, Integer habitacionDestino) {
+		List<Employee> empleados = findAll();
+		for (Employee e: empleados) {
+			if (e.getRoom().equals(habitacionOrigen)) {
+				e.setRoom(habitacionDestino);
+				save(e);
+			}
+		}
+	}
 	
 
 }

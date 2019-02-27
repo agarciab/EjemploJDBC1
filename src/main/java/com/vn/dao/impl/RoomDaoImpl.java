@@ -25,7 +25,13 @@ public class RoomDaoImpl extends AbstractDao<Room, Integer> implements RoomDao {
 		Room room = new Room();
 		room.setRoomId(id);
 		SqlParameterSource namedParameters = new BeanPropertySqlParameterSource(room);
-		return namedParameterjdbcTemplate.queryForObject(sql, namedParameters, roomMapper);
+		Room b = null;
+		try {
+			b = namedParameterjdbcTemplate.queryForObject(sql, namedParameters, roomMapper);
+		} catch (Exception e) {
+			b= null;
+		}
+		return b;
 	}
 
 	@Override
